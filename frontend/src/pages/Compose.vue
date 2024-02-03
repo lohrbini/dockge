@@ -182,6 +182,24 @@
                         {{ yamlError }}
                     </div>
 
+                    <!-- YAML editor docker-compose.override.yml -->
+                    <div class="shadow-box mb-3 editor-box" :class="{'edit-mode' : isEditMode}">
+                        <h4 class="mb-3">override config</h4>
+                        <prism-editor
+                            ref="editor"
+                            v-model="stack.composeYAML"
+                            class="yaml-editor"
+                            :highlight="highlighterYAML"
+                            line-numbers :readonly="!isEditMode"
+                            @input="yamlCodeChange"
+                            @focus="editorFocus = true"
+                            @blur="editorFocus = false"
+                        ></prism-editor>
+                    </div>
+                    <div v-if="isEditMode" class="mb-3">
+                        {{ yamlError }}
+                    </div>
+
                     <!-- ENV editor -->
                     <div v-if="isEditMode">
                         <h4 class="mb-3">.env</h4>

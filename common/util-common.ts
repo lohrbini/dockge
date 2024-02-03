@@ -120,9 +120,11 @@ export const allowedRawKeys = [
 
 export const acceptedComposeFileNames = [
     "compose.yaml",
+    "compose.yml",
     "docker-compose.yaml",
     "docker-compose.yml",
-    "compose.yml",
+    "docker-compose.override.yml",
+    "docker-compose.override.yaml"
 ];
 
 /**
